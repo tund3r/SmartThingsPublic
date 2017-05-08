@@ -61,10 +61,10 @@ def modeChangeHandler (evt){
    log.debug "state.modeso ${modes}"
    log.debug "mode changed to ${evt.value}"
    if (modes.find{it == evt.value}) {
-            log.warn "Tried to change to mode '${evt.value}'"
-            thermostat.resumeSchedule()
+            log.info "Tried to change to mode '${evt.value}'"
+            thermostat.resumeProgram()
             //setLocationMode(newMode)
         }  else {
-            log.warn "Tried to change to undefined mode '${evt.value}'"
+            log.info "Tried to change to undefined mode '${evt.value}'"
         }
 }
